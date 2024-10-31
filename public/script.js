@@ -1,43 +1,64 @@
-
 document.addEventListener('DOMContentLoaded', () => {
-    const csvUrl = '../test_cases.csv';
-    const tableHeader = document.getElementById('table-header');
-    const tableBody = document.getElementById('table-body');
+    const useCasesFile = document.getElementById('use-cases-file');
+    const testCasesFile = document.getElementById('test-cases-file');
+    const useCasesContainer = document.getElementById('use-cases-container');
+    const testCasesContainer = document.getElementById('test-cases-container');
     const pdfButton = document.getElementById('pdf-button');
 
-    Papa.parse(csvUrl, {
-        download: true,
-        header: true,
-        complete: function(results) {
-            const headers = results.meta.fields;
-            
-            // Insert header
-            headers.forEach(header => {
-                const th = document.createElement('th');
-                th.textContent = header.trim();
-                tableHeader.appendChild(th);
-            });
+    useCasesFile.addEventListener('change', (event) => {
+        handleFileUpload(event, 'use-cases');
+    });
 
-            // Insert rows
-            results.data.forEach(row => {
-                if (Object.values(row).some(value => value.trim() !== '')) {
-                    const tr = document.createElement('tr');
-                    headers.forEach(header => {
-                        const td = document.createElement('td');
-                        td.textContent = row[header].trim();
-                        tr.appendChild(td);
-                    });
-                    tableBody.appendChild(tr);
-                }
-            });
-        },
-        error: function(error) {
-            console.error('Error loading CSV:', error);
-        }
+    testCasesFile.addEventListener('change', (event) => {
+        handleFileUpload(event, 'test-cases');
     });
 
     pdfButton.addEventListener('click', generatePDF);
 });
+
+function handleFileUpload(event, type) {
+    const file = event.target.files[0];
+    if (file) {
+        Papa.parse(file, {
+            complete: function(results) {
+                displayCSV(results.data, type);
+            }
+        });
+    }
+}
+
+function displayCSV(data, type) {
+    const tableHeader = document.getElementById(`${type}-header`);
+    const tableBody = document.getElementById(`${type}-body`);
+    const container = document.getElementById(`${type}-container`);
+
+    // Clear previous content
+    tableHeader.innerHTML = '';
+    tableBody.innerHTML = '';
+
+    // Display header
+    data[0].forEach(header => {
+        const th = document.createElement('th');
+        th.textContent = header.trim();
+        tableHeader.appendChild(th);
+    });
+
+    // Display rows
+    data.slice(1).forEach(row => {
+        if (row.some(cell => cell.trim() !== '')) {
+            const tr = document.createElement('tr');
+            row.forEach(cell => {
+                const td = document.createElement('td');
+                td.textContent = cell.trim();
+                tr.appendChild(td);
+            });
+            tableBody.appendChild(tr);
+        }
+    });
+
+    // Show the container
+    container.style.display = 'block';
+}
 
 function generatePDF() {
     const { jsPDF } = window.jspdf;
@@ -46,27 +67,30 @@ function generatePDF() {
     doc.setFontSize(18);
     doc.text('Test Case Report', 14, 22);
 
-    doc.autoTable({
-        html: '#csv-table',
-        startY: 30,
-        styles: { fontSize: 8 },
-        columnStyles: {
-            0: { cellWidth: 30 },
-            1: { cellWidth: 30 },
-            2: { cellWidth: 30 },
-            3: { cellWidth: 30 },
-            4: { cellWidth: 30 },
-            5: { cellWidth: 30 }
-        },
-        didDrawCell: (data) => {
-            if (data.section === 'body') {
-                const td = data.cell.raw;
-                const text = td.textContent.trim();
-                const split = doc.splitTextToSize(text, data.cell.width - 4);
-                doc.text(split, data.cell.x + 2, data.cell.y + 4);
-            }
-        }
-    });
+    let yOffset = 30;
+
+    if (document.getElementById('use-cases-container').style.display !== 'none') {
+        doc.setFontSize(14);
+        doc.text('Use Cases', 14, yOffset);
+        doc.autoTable({
+            html: '#use-cases-table',
+            startY: yOffset + 10,
+            styles: { fontSize: 8 },
+            columnStyles: { cellWidth: 'auto' },
+        });
+        yOffset = doc.lastAutoTable.finalY + 20;
+    }
+
+    if (document.getElementById('test-cases-container').style.display !== 'none') {
+        doc.setFontSize(14);
+        doc.text('Test Cases', 14, yOffset);
+        doc.autoTable({
+            html: '#test-cases-table',
+            startY: yOffset + 10,
+            styles: { fontSize: 8 },
+            columnStyles: { cellWidth: 'auto' },
+        });
+    }
 
     doc.save('test_case_report.pdf');
 }

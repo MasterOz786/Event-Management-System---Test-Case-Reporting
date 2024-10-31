@@ -10,15 +10,35 @@
 <body>
     <div class="container">
         <h1>Test Case Report</h1>
+        <div class="file-inputs">
+            <div class="file-input">
+                <label for="use-cases-file">Upload Use Cases CSV:</label>
+                <input type="file" id="use-cases-file" accept=".csv">
+            </div>
+            <div class="file-input">
+                <label for="test-cases-file">Upload Test Cases CSV:</label>
+                <input type="file" id="test-cases-file" accept=".csv">
+            </div>
+        </div>
         <div class="controls">
             <button id="pdf-button" class="btn">Generate PDF</button>
         </div>
-        <div class="table-container">
-            <table id="csv-table">
+        <div id="use-cases-container" class="table-container">
+            <h2>Use Cases</h2>
+            <table id="use-cases-table">
                 <thead>
-                    <tr id="table-header"></tr>
+                    <tr id="use-cases-header"></tr>
                 </thead>
-                <tbody id="table-body"></tbody>
+                <tbody id="use-cases-body"></tbody>
+            </table>
+        </div>
+        <div id="test-cases-container" class="table-container">
+            <h2>Test Cases</h2>
+            <table id="test-cases-table">
+                <thead>
+                    <tr id="test-cases-header"></tr>
+                </thead>
+                <tbody id="test-cases-body"></tbody>
             </table>
         </div>
     </div>

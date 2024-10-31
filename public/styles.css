@@ -33,6 +33,39 @@ h1 {
     font-weight: 600;
 }
 
+h2 {
+    color: #4a4a4a;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.file-inputs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.file-input {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+
+.file-input label {
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #4a4a4a;
+}
+
+.file-input input[type="file"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
 .controls {
     display: flex;
     justify-content: flex-end;
@@ -67,6 +100,7 @@ h1 {
     max-height: 70vh;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
 }
 
 table {
@@ -127,6 +161,19 @@ tbody tr:last-child td {
 
     h1 {
         font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .file-inputs {
+        flex-direction: column;
+    }
+
+    .file-input {
+        width: 100%;
+        margin-bottom: 10px;
     }
 
     th, td {
