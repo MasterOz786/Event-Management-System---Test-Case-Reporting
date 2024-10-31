@@ -13,58 +13,12 @@ Equivalence Class Partitioning divides input data into valid and invalid partiti
 ### 2. Boundary Value Analysis
 Boundary Value Analysis focuses on testing the boundaries of input ranges to identify potential edge case failures.
 
-## Key Features Tested
+## Test Report
 
-### User Registration
+The report is uploaded on Google Drive, generated through a personal Report Generation System built
+on pure HTML, CSS and JS.
 
-#### Full Name
-- **Valid Partition**: 
-  - Alphabetic characters only
-  - Length: 1-50 characters
-- **Invalid Partition**: 
-  - Empty strings
-  - Non-alphabetic characters (numbers, special symbols)
-- **Boundary Values**:
-  - Minimum: 1 character
-  - Maximum: 50 characters
-
-#### Email Address
-- **Valid Partition**: Standard email format (e.g., user@example.com)
-- **Invalid Partition**: 
-  - Empty strings
-  - Incorrect email formats
-
-#### Age
-- **Valid Partition**: Integer between 18-100
-- **Invalid Partition**: 
-  - Below 18 years
-  - Above 100 years
-- **Boundary Values**:
-  - Minimum: 18 years
-  - Maximum: 100 years
-
-#### Password
-- **Valid Partition**: 
-  - At least 8 characters
-  - Includes 1 uppercase letter
-  - Includes 1 number
-- **Invalid Partition**: 
-  - Less than 8 characters
-  - No uppercase letters
-  - No numbers
-- **Boundary Values**:
-  - Minimum length: 8 characters
-  - Maximum length tests not specified
-
-#### Credit Card
-- **Valid Partition**: Exactly 16 numeric digits
-- **Invalid Partition**: 
-  - Empty
-  - Non-numeric characters
-  - Less/more than 16 digits
-- **Boundary Values**:
-  - Exactly 16 digits
-  - 15 and 17 digits (invalid)
+[Clicky!](https://drive.google.com/file/d/19Gg0hC9dvKO_L3B_IcDrhE9nQU-S3emW/view?usp=sharing)
 
 ## Test Coverage Summary
 
