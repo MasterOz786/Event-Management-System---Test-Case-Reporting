@@ -1,0 +1,30 @@
+Feature,Conditions,Valid Partitions,Invalid Partitions,Valid Boundaries,Invalid Boundaries
+User Registration,Full Name,Alphabetic characters only (1-50 chars),"Empty or non-alphabetic characters (e.g. ""12345"" and ""John#Doe"")",1 character,51 character
+User Registration,Email Address,Standard email format (e.g. user@example.com),"Empty or invalid formats (e.g. ""user@.com"" and ""user@domain"")",n/a,n/a
+User Registration,Age,Integer 18-100,"< 18 and > 100",18,101
+User Registration,Password,"At least 8 chars, 1 uppercase letter, 1 number","< 8 chars, no uppercase, no number",8 characters,7 characters
+User Registration,Confirm Password,Must match Password and not be empty,Empty or does not match Password,n/a,n/a
+User Registration,Credit Card Info,Exactly 16 numeric digits,"Empty, non-numeric, less/more than 16 digits",16 digits,"15 and 17 digits"
+Event Selection,Browse and Select Events,Event selected,None,None,None
+Payment Processing,Secure Processing,Payment processed successfully,Failure or rejection,None,None
+Email Confirmation,Receive Confirmation Email,Email received,None,None,None
+Profile Management,Manage Profile,Profile displayed and editable,None,None,None
+Password Recovery,Request Reset Link,Reset link sent,None,None,None
+Event Details Page,View Event Details,Event information displayed,None,None,None
+User Roles,Access Levels,Admin and User roles have different access,None,None,None
+Search Functionality,User selects search option and inputs data,"Valid date format (MM/DD/YYYY), Location ≤ 50 chars, Valid category","Invalid date format, Empty location, Category with spaces or invalid characters","Date format (MM/DD/YYYY), Location = 50 characters, Category name length","Date with invalid month/day, Location > 50 characters, Invalid category characters"
+User Reviews and Ratings,User rates experience after event attendance,"Rating 1-5 stars, Review ≤ 200 characters (optional)","Rating < 1 or > 5, Review > 200 characters","Rating = 1, Review = empty string","Rating = 0, Rating = 6, Review > 200 characters"
+Notification System,User receives notifications for updates,Notifications received as per event changes,No notifications received,Notifications sent as expected,Notifications not sent
+Event Cancellation,User cancels event registration within time frame,"Cancellation > 10 days = full refund, 5-10 days = 50% refund, < 5 days = no refund","Cancellation > event date, Invalid cancellation requests","Cancellation exactly 10 days before event, Cancellation 5 days before event","Cancellation < 0 days, Invalid cancellation requests"
+Promotional Discount Codes,User applies discount code during payment,Valid 4-digit numeric discount code,"Non-numeric code, Code not 4 digits","Code = 1000, Code = 9999","Code = 100, Code = 99999"
+Mobile Responsiveness,System accessible on mobile devices,Fully responsive design,Design not responsive,Design fits all mobile screens,Design fails on mobile view
+Data Export,Administrator exports data,Valid CSV or Excel format,Invalid format,"Export as CSV, Export as Excel",Export with incorrect file type
+Session Management,User inactive for specified time,User logged out after inactivity,User remains logged in,Timeout = specified period,"Timeout = 0, Timeout = negative value"
+Multi-Language Support,System supports multiple languages,Valid language options available,Invalid language input,"Languages supported = English, Spanish, etc.",Language not supported
+Group Registration Discounts,User registers multiple participants,"1-5 participants = no discount, 6-10 = 10%, 11+ = 15%","Participants < 1, Non-numeric participant count","Participants = 5, Participants = 10","Participants = 0, Participants = 15"
+Early Bird Registration,User registers at least 30 days before event,Registration date ≥ (Event date - 30 days),Registration date < (Event date - 30 days),Registration date = (Event date - 30 days),Registration date < 0 days before event
+Promotional Code Validation,User enters promotional code during checkout,"Valid promotional code, Usage limits met, Not expired","Invalid promotional code, Usage limit exceeded, Expired code",Code valid within usage limits,"Code not found in the database, Expired code"
+Payment Plan Options,User selects a payment plan for a high-cost event,"Valid payment plans: full, two installments, three installments",Invalid payment plans or non-high-cost events,"Plan selected = full payment, Plan selected = two installments","Plan selected = nonexistent option, Plan selected = invalid amount"
+Event Bundle Registration,User registers for multiple events,"Register for 2 events, 3 events, or 4+ events for discounts","Register for 1 event, Invalid event counts","Registering 2 events = 5% discount, 3 events = 10%, 4+ events = 15%","Registering 0 events, Invalid event registration"
+Customizable Registration Options,User selects additional options,Valid combinations of options leading to discounts,Invalid combinations or unsupported options,Combination selected = main event + workshop option = 10% discount,"Combination selected = unsupported options, Combination does not trigger discount"
+Referral Program,User enters a referral code during registratio n,"Valid referral code used by new user, Both users receive discounts","Invalid referral code, Code used by existing user","Referral code applied successfully, Discounts applied to both users","Code not recognized, Code used incorrectly"
