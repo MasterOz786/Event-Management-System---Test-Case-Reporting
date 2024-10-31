@@ -1,156 +1,127 @@
-# Event Management System Test Case Report
+# Event Registration System Test Case Documentation
 
-## Use Cases
+## Overview
+This document provides comprehensive test case documentation for the Event Registration System, utilizing two primary testing techniques:
+1. Equivalence Class Partitioning (Weak Testing)
+2. Boundary Value Analysis
 
-1. User Registration
-   - Users can register by providing their full name, email address, age, password, and credit card information.
-   - The system validates the input data according to specified criteria.
+## Testing Techniques
 
-2. Event Selection
-   - Users can browse and select events from the available options.
+### 1. Equivalence Class Partitioning
+Equivalence Class Partitioning divides input data into valid and invalid partitions to reduce the total number of test cases while maintaining effective coverage.
 
-3. Payment Processing
-   - The system securely processes payments for selected events.
+### 2. Boundary Value Analysis
+Boundary Value Analysis focuses on testing the boundaries of input ranges to identify potential edge case failures.
 
-4. Email Confirmation
-   - Users receive a confirmation email after successful registration and payment.
+## Key Features Tested
 
-5. Profile Management
-   - Users can view and edit their profile information.
+### User Registration
 
-6. Password Recovery
-   - Users can request a password reset link if they forget their password.
+#### Full Name
+- **Valid Partition**: 
+  - Alphabetic characters only
+  - Length: 1-50 characters
+- **Invalid Partition**: 
+  - Empty strings
+  - Non-alphabetic characters (numbers, special symbols)
+- **Boundary Values**:
+  - Minimum: 1 character
+  - Maximum: 50 characters
 
-7. Event Details Page
-   - Users can view detailed information about specific events.
+#### Email Address
+- **Valid Partition**: Standard email format (e.g., user@example.com)
+- **Invalid Partition**: 
+  - Empty strings
+  - Incorrect email formats
 
-8. User Roles
-   - The system supports different access levels for admin and regular users.
+#### Age
+- **Valid Partition**: Integer between 18-100
+- **Invalid Partition**: 
+  - Below 18 years
+  - Above 100 years
+- **Boundary Values**:
+  - Minimum: 18 years
+  - Maximum: 100 years
 
-9. Search Functionality
-   - Users can search for events based on date, location, and category.
+#### Password
+- **Valid Partition**: 
+  - At least 8 characters
+  - Includes 1 uppercase letter
+  - Includes 1 number
+- **Invalid Partition**: 
+  - Less than 8 characters
+  - No uppercase letters
+  - No numbers
+- **Boundary Values**:
+  - Minimum length: 8 characters
+  - Maximum length tests not specified
 
-10. User Reviews and Ratings
-    - Users can rate and review events they have attended.
+#### Credit Card
+- **Valid Partition**: Exactly 16 numeric digits
+- **Invalid Partition**: 
+  - Empty
+  - Non-numeric characters
+  - Less/more than 16 digits
+- **Boundary Values**:
+  - Exactly 16 digits
+  - 15 and 17 digits (invalid)
 
-11. Notification System
-    - Users receive notifications about event updates and changes.
+## Test Coverage Summary
 
-12. Event Cancellation
-    - Users can cancel their event registration within specified time frames.
+### Total Test Cases by Feature
+- User Registration: 23 test cases
+- Event Selection: 2 test cases
+- Payment Processing: 2 test cases
+- Email Confirmation: 2 test cases
+- Profile Management: 2 test cases
+- Password Recovery: 2 test cases
+- Event Details Page: 2 test cases
+- User Roles: 2 test cases
+- Search Functionality: 4 test cases
+- User Reviews and Ratings: 4 test cases
+- Notification System: 2 test cases
+- Event Cancellation: 2 test cases
+- Promotional Discount Codes: 2 test cases
+- Mobile Responsiveness: 2 test cases
+- Data Export: 2 test cases
+- Session Management: 2 test cases
+- Multi-Language Support: 2 test cases
+- Group Registration Discounts: 2 test cases
+- Early Bird Registration: 3 test cases
+- Promotional Code Validation: 6 test cases
+- Payment Plan Options: 4 test cases
+- Event Bundle Registration: 4 test cases
+- Customizable Registration Options: 2 test cases
+- Referral Program: 3 test cases
 
-13. Promotional Discount Codes
-    - Users can apply discount codes during the payment process.
+## Testing Approach
+1. Identified valid and invalid input partitions
+2. Tested boundary conditions
+3. Covered various scenarios including:
+   - Positive test cases
+   - Negative test cases
+   - Edge case scenarios
+   - Invalid input handling
 
-14. Mobile Responsiveness
-    - The system is accessible and fully functional on mobile devices.
+## Recommendations
+1. Implement robust input validation
+2. Provide clear error messages
+3. Ensure consistent user experience across different scenarios
+4. Continuously update test cases as system requirements evolve
 
-15. Data Export
-    - Administrators can export data in CSV or Excel format.
+## Tools and Methodology
+- Testing Techniques: Equivalence Class Partitioning, Boundary Value Analysis
+- Test Case Management: Manual test case design
+- Coverage: Comprehensive across multiple system features
 
-16. Session Management
-    - The system manages user sessions and handles inactivity timeouts.
+## Limitations
+- Some scenarios may require additional real-world testing
+- Automated testing could provide more comprehensive coverage
 
-17. Multi-Language Support
-    - The system supports multiple languages for a diverse user base.
+## Notes for Developers
+- Pay special attention to boundary conditions
+- Implement thorough input validation
+- Design user-friendly error messaging
 
-18. Group Registration Discounts
-    - Users can register multiple participants with applicable discounts.
-
-19. Early Bird Registration
-    - Users can benefit from early bird discounts when registering in advance.
-
-20. Promotional Code Validation
-    - The system validates promotional codes during the checkout process.
-
-21. Payment Plan Options
-    - Users can select from various payment plans for high-cost events.
-
-22. Event Bundle Registration
-    - Users can register for multiple events with bundle discounts.
-
-23. Customizable Registration Options
-    - Users can select additional options during the registration process.
-
-24. Referral Program
-    - Users can enter referral codes to receive discounts.
-
-## Test Cases
-
-1. User Registration
-   - Validate full name input (1-50 alphabetic characters)
-   - Verify email address format
-   - Confirm age is between 18 and 100
-   - Ensure password meets complexity requirements
-   - Validate credit card information (16 numeric digits)
-
-2. Event Selection
-   - Verify users can browse and select events
-
-3. Payment Processing
-   - Confirm secure payment processing
-
-4. Email Confirmation
-   - Verify receipt of confirmation email
-
-5. Profile Management
-   - Ensure profile information is displayed and editable
-
-6. Password Recovery
-   - Confirm reset link is sent when requested
-
-7. Event Details Page
-   - Verify event information is correctly displayed
-
-8. User Roles
-   - Validate different access levels for admin and user roles
-
-9. Search Functionality
-   - Test search options for date, location, and category
-
-10. User Reviews and Ratings
-    - Verify users can rate (1-5 stars) and review (≤200 characters) events
-
-11. Notification System
-    - Confirm notifications are received for event updates
-
-12. Event Cancellation
-    - Test cancellation process and refund policies
-
-13. Promotional Discount Codes
-    - Validate 4-digit numeric discount codes
-
-14. Mobile Responsiveness
-    - Ensure system is fully responsive on mobile devices
-
-15. Data Export
-    - Verify administrators can export data in CSV or Excel format
-
-16. Session Management
-    - Test user logout after specified inactivity period
-
-17. Multi-Language Support
-    - Confirm system supports multiple languages
-
-18. Group Registration Discounts
-    - Verify discount application for multiple participants
-
-19. Early Bird Registration
-    - Test early bird discounts for registrations 30+ days before event
-
-20. Promotional Code Validation
-    - Verify promotional code validation during checkout
-
-21. Payment Plan Options
-    - Test various payment plans for high-cost events
-
-22. Event Bundle Registration
-    - Confirm discounts for multiple event registrations
-
-23. Customizable Registration Options
-    - Verify additional options can be selected during registration
-
-24. Referral Program
-    - Test referral code application and associated discounts
-
-Each test case should be executed with both valid and invalid inputs to ensure proper functionality and error handling. The system should be thoroughly tested for usability, performance, and security across all 
+## Contact
+For further information or clarifications, please contact the QA team.

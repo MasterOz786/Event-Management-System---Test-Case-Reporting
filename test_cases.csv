@@ -36,46 +36,46 @@ Event Details Page,TC1,User views event details page,Event information displayed
 Event Details Page,TC2,User attempts to access details of non-existent event,Error message displayed,E6
 User Roles,TC1,Admin accesses restricted area,Admin access granted,U1
 User Roles,TC2,User attempts to access admin-only area,Access denied error displayed,U2
-Search Functionality,TC1,"Test valid search with correct date location and category","Search results displayed correctly,V1
-Search Functionality,TC2,"Test invalid date format (MM/DD/YYYY)","Error message displayed for invalid date,X1
-Search Functionality,TC3,"Test empty location input","Error message displayed for empty location,X2
-Search Functionality,TC4,"Test category with spaces","Error message displayed for invalid category,X3
+Search Functionality,TC1,"Test valid search with correct date location and category","Search results displayed correctly",V1
+Search Functionality,TC2,"Test invalid date format (MM/DD/YYYY)","Error message displayed for invalid date",X1
+Search Functionality,TC3,"Test empty location input","Error message displayed for empty location",X2
+Search Functionality,TC4,"Test category with spaces","Error message displayed for invalid category",X3
 User Reviews and Ratings,TC5,"Test valid rating of 4 stars and an optional review","Rating and review submitted successflly",V1
-User Reviews and Ratings,TC6,"Test rating below 1 star","Error message displayed for invalid rating,X1
-User Reviews and Ratings,TC7,"Test rating above 5 stars","Error message displayed for invalid rating,X2
-User Reviews and Ratings,TC8,"Test review exceeding 200 characters","Error message displayed for long review,X3
-Notification System,TC9,"Test user receives notification for event update","Notification displayed to user,V1
+User Reviews and Ratings,TC6,"Test rating below 1 star","Error message displayed for invalid rating",X1
+User Reviews and Ratings,TC7,"Test rating above 5 stars","Error message displayed for invalid rating",X2
+User Reviews and Ratings,TC8,"Test review exceeding 200 characters","Error message displayed for long review",X3
+Notification System,TC9,"Test user receives notification for event update","Notification displayed to user",V1
 Notification System,TC10,"Test no notification received for non-existent events","No notification error message displaye",X1
-Event Cancellation,TC11,"Test cancellation 15 days before event","Full refund processed,V1
-Event Cancellation,TC12,"Test cancellation 3 days before event","No refund processed,X1
-Promotional Discount Codes,TC13,"Test valid discount code 1234","Discount applied during checkout,V1
-Promotional Discount Codes,TC14,"Test invalid discount code (not 4 digits)","Error message displayed for invalid code,X1
-Mobile Responsiveness,TC15,"Test access on mobile device","System displays correctly on mobile,V1
-Mobile Responsiveness,TC16,"Test access on non-mobile device","System displays with expected layout,X1
-Data Export,TC17,"Test export user data as CSV","Data exported in correct format,V1
-Data Export,TC18,"Test export with unsupported format","Error message displayed for invalid format,X1
-Session Management,TC19,"Test user logout after inactivity period","User logged out after specified timeout,V1
-Session Management,TC20,"Test user remains logged in with activity","User remains logged in successfully,V2
-Multi-Language Support,TC21,"Test switching to supported language","Language changes successfully,V1
-Multi-Language Support,TC22,"Test unsupported language input","Error message displayed for unsupported language,X1
-Group Registration Discounts,TC23,"Test registering 7 participants","10% discount applied successfully,V1
-Group Registration Discounts,TC24,"Test registering 12 participants","15% discount applied successfully,V2
-Early Bird Registration,TC1,"Test registration 31 days before event","20% discount applied,V1
-Early Bird Registration,TC2,"Test registration 29 days before event","No discount applied and registration accepted,X1
-Early Bird Registration,TC3,"Test registration on the event date","No discount applied and registration accepted,X2
-Promotional Code Validation,TC4,"Test valid promotional code","Discount applied to total registration fee,V1
-Promotional Code Validation,TC5,"Test invalid promotional code","Error message displayed for invalid code,X1
-Promotional Code Validation,TC6,"Test expired promotional code","Error message displayed for expired code,X2
-Payment Plan Options,TC7,"Test full payment option selected","Total amount due displayed correctly,V1
+Event Cancellation,TC11,"Test cancellation 15 days before event","Full refund processed",V1
+Event Cancellation,TC12,"Test cancellation 3 days before event","No refund processed",X1
+Promotional Discount Codes,TC13,"Test valid discount code 1234","Discount applied during checkout",V1
+Promotional Discount Codes,TC14,"Test invalid discount code (not 4 digits)","Error message displayed for invalid code",X1
+Mobile Responsiveness,TC15,"Test access on mobile device","System displays correctly on mobile",V1
+Mobile Responsiveness,TC16,"Test access on non-mobile device","System displays with expected layout",X1
+Data Export,TC17,"Test export user data as CSV","Data exported in correct format",V1
+Data Export,TC18,"Test export with unsupported format","Error message displayed for invalid format",X1
+Session Management,TC19,"Test user logout after inactivity period","User logged out after specified timeout",V1
+Session Management,TC20,"Test user remains logged in with activity","User remains logged in successfully",V2
+Multi-Language Support,TC21,"Test switching to supported language","Language changes successfully",V1
+Multi-Language Support,TC22,"Test unsupported language input","Error message displayed for unsupported language",X1
+Group Registration Discounts,TC23,"Test registering 7 participants","10% discount applied successfully",V1
+Group Registration Discounts,TC24,"Test registering 12 participants","15% discount applied successfully",V2
+Early Bird Registration,TC1,"Test registration 31 days before event","20% discount applied",V1
+Early Bird Registration,TC2,"Test registration 29 days before event","No discount applied and registration accepted",X1
+Early Bird Registration,TC3,"Test registration on the event date","No discount applied and registration accepted",X2
+Promotional Code Validation,TC4,"Test valid promotional code","Discount applied to total registration fee",V1
+Promotional Code Validation,TC5,"Test invalid promotional code","Error message displayed for invalid code",X1
+Promotional Code Validation,TC6,"Test expired promotional code","Error message displayed for expired code",X2
+Payment Plan Options,TC7,"Test full payment option selected","Total amount due displayed correctly",V1
 Payment Plan Options,TC8,"Test two installments option selected","Total due amounts for each installment displayed corretly",V2
-Payment Plan Options,TC9,"Test three installments option selected","Amounts due displayed for all three installments,V3
-Payment Plan Options,TC10,"Test selecting an invalid payment plan","Error message displayed for invalid selection,X1
-Event Bundle Registration,TC11,"Test registration for 2 events","5% discount applied on total,V1
-Event Bundle Registration,TC12,"Test registration for 3 events","10% discount applied on total,V2
-Event Bundle Registration,TC13,"Test registration for 4 events","15% discount applied on total,V3
-Event Bundle Registration,TC14,"Test registration for 1 event","No discount applied and registration accepted,X1
-Customizable Registration Options,TC15,"Test selecting main event and workshop","10% discount applied on workshop fee,V1
+Payment Plan Options,TC9,"Test three installments option selected","Amounts due displayed for all three installments",V3
+Payment Plan Options,TC10,"Test selecting an invalid payment plan","Error message displayed for invalid selection",X1
+Event Bundle Registration,TC11,"Test registration for 2 events","5% discount applied on total",V1
+Event Bundle Registration,TC12,"Test registration for 3 events","10% discount applied on total",V2
+Event Bundle Registration,TC13,"Test registration for 4 events","15% discount applied on total",V3
+Event Bundle Registration,TC14,"Test registration for 1 event","No discount applied and registration accepted",X1
+Customizable Registration Options,TC15,"Test selecting main event and workshop","10% discount applied on workshop fee",V1
 Customizable Registration Options,TC16,"Test selecting unsupported combination of options","Error message displayed for nsupported options",X1
-Referral Program,TC17,"Test valid referral code used by new user","$10 discount applied to both users,V1
-Referral Program,TC18,"Test invalid referral code entered","Error message displayed for invalid code,X1
-Referral Program,TC19,"Test code used by existing user","No discount applied and error message displayed,X2
+Referral Program,TC17,"Test valid referral code used by new user","$10 discount applied to both users",V1
+Referral Program,TC18,"Test invalid referral code entered","Error message displayed for invalid code",X1
+Referral Program,TC19,"Test code used by existing user","No discount applied and error message displayed",X2
